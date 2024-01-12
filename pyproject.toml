@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "prompts"
+version = "0.1.0"
+description = "Generate and notify users via email of journal prompts"
+authors = ["Natalie Dunn"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+openai = "^1.7.1"
+schedule = "^1.2.1"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.4.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
