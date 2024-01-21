@@ -11,8 +11,8 @@ def job():
     return
 
 
-schedule.every().day.at("07:00").do(job)
+schedule.every().day.at("07:00", "America/New_York").do(job)
 
 while True:
     schedule.run_pending()
-    time.sleep(60)  # wait one minute
+    time.sleep(3600)  # wait one hour

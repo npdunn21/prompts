@@ -9,6 +9,7 @@ readme = "README.md"
 python = "^3.11"
 openai = "^1.7.1"
 schedule = "^1.2.1"
+pytz = "^2023.3.post1"
 
 [tool.poetry.group.dev.dependencies]
 pytest = "^7.4.4"

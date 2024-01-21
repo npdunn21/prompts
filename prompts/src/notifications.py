@@ -4,13 +4,24 @@ import smtplib
 from email.mime.text import MIMEText
 
 
+_MAP_DAY_INT_TO_STR_DAY_OF_THE_WEEK = {
+    0: "Monday",
+    1: "Tuesday",
+    2: "Wednesday",
+    3: "Thursday",
+    4: "Friday",
+    5: "Saturday",
+    6: "Sunday"
+}
+
 def send_email(prompts: list[str]):
     from_email: str = os.getenv("SERVICE_EMAIL")
     from_password: str = os.getenv("SERVICE_EMAIL_PASSWORD")
     to_email: str = os.getenv("MY_EMAIL")
 
     subject: str = f"Journaling Prompt {datetime.datetime.today()}"
-    message: str = f"Today is {datetime.datetime.today().weekday()}. The suggested journal prompts for today are: \n 1. {prompts[0]} \n 2. {prompts[1]} \n 3. {prompts[2]}"
+    message: str = (f"Today is {_MAP_DAY_INT_TO_STR_DAY_OF_THE_WEEK[datetime.datetime.today().weekday()]}. <br> The "
+                    f"suggested journal prompts for today are: <br> {prompts[0]} <br> {prompts[1]} <br> {prompts[2]}")
 
     msg: MIMEText = MIMEText(message, 'html')
     msg['Subject'] = subject
