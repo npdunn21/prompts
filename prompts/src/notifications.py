@@ -14,6 +14,7 @@ _MAP_DAY_INT_TO_STR_DAY_OF_THE_WEEK = {
     6: "Sunday"
 }
 
+
 def send_email(prompts: list[str]):
     from_email: str = os.getenv("SERVICE_EMAIL")
     from_password: str = os.getenv("SERVICE_EMAIL_PASSWORD")
